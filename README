@@ -1,3 +1,21 @@
+# Testing Binary Differential Expression with Colorectal cancer data
+
+## Download data
+
+cd data
+wget -ci getit
+
+## Running script
+
+### (En boqueron)
+
 srun --mem=32000 --pty bash
 TMPDIR=$(pwd) R --no-save < src/colorectalCancer.R
 
+### o en bridges
+
+interact --mem=2000
+cd rtainer
+apptainer shell rtainer.sif
+cd ../colorectal-test
+R --no-save < src/colorectalCancer.R
