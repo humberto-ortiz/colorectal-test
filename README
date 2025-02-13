@@ -1,0 +1,3 @@
+srun --mem=32000 --pty bash
+TMPDIR=$(pwd) R --no-save < src/colorectalCancer.R
+
